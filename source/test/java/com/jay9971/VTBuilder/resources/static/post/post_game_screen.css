@@ -1,0 +1,398 @@
+.question {
+    text-align: bottom;
+    width: 100%;
+    height: 50%;
+    font-weight: normal;
+}
+
+.slider-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height:50%;
+    width:60%;
+}
+.slider {
+    -webkit-appearance: none; /* Remove default styles for Webkit browsers */
+    appearance: none; /* Remove default styles */
+    width: 100%; /* Ensure the slider takes up the full width of the container */
+    height: 20%; /* Adjust this value to make the slider track thicker vertically */
+    background: #ccc; /* Set the background color of the slider track */
+    border-radius: 50px; /* Rounded corners for the track */
+}
+
+
+/* Style the slider thumb (the handle) */
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Remove default styles for Webkit browsers */
+    appearance: none; /* Remove default styles */
+    width: 30px; /* Adjust this value to make the slider thumb wider */
+    height: 30px; /* Adjust this value to make the slider thumb taller */
+    background:rgb(113, 113, 157); /* Set the background color of the slider thumb */
+    border-radius: 50%; /* Make the thumb round */
+    cursor: pointer; /* Add a cursor pointer */
+}
+
+.slider-text {
+    text-align: center;
+}
+.dark-mode .slider-text {
+    color:white;
+}
+
+#save-button {
+    margin-top: 20px;
+    font-size: 15px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+}
+
+#question-square {
+    align-items: center;
+    justify-content: center;
+}
+.space-group {
+    height:5%;
+}
+
+#page-1 {
+    height: 65%;
+    width: 100%;
+}
+
+#page-2 {
+    height: 65%;
+    width: 100%;
+}
+
+#page-3 {
+    height: 65%;
+    width: 100%;
+    gap:4%;
+}
+
+
+#page-4 {
+    height: 65%;
+    width: 100%;
+    
+}
+.sliderOneContainer {
+    width: 69%;
+    height: 20%;
+    font-family: 'Raleway', sans-serif;
+}
+
+.sliderTwoContainer {
+    width: 69%;
+    height: 20%;
+}
+
+
+.sendButtonHolder {
+    width: 200px;
+    height:150px;
+}
+
+#loadingText {
+    height:10%;
+    width: 60%;
+}
+
+#loading {
+    font-size: 10px;
+    height: 100%;
+    width: 100%;
+    
+}
+
+.space-group-superficial {
+    height:20%;
+}
+
+.finalImage {
+    border-radius: 50px;
+}
+
+.instructions-row {
+    height:100%;
+}
+.label {
+    display:flex;
+    width:200px;
+    height:50px;
+    justify-content: center;
+    align-items: center;
+    
+    background-color:transparent;
+    color:black;
+    font-weight:bold;
+}
+.dark-mode .label {
+    
+    color: white;
+}
+
+#endPostButton {
+    width: 40%;
+    height: 100%;
+}
+
+#analyticsButton {
+    width: 40%;
+    height: 100%;
+}
+
+#endGameButtons {
+    width: 300px;
+    height: 50px;
+}
+
+.verticalButtonSpace {
+    width:10px;
+}
+
+.reflection-container {
+    
+    width: 70%;
+    height:80%;
+    border-radius: 15px;
+    background-color: rgba(149, 132, 151, 0.739);
+}
+
+.reflectionButtons {
+    width: 300px;
+    height: 50px;
+    margin-top:10px;
+}
+
+#toLobby {
+    width: 40%;
+    height: 100%;
+}
+
+#back {
+    width: 40%;
+    height: 100%;
+}
+
+
+.reflection-instructions {
+    color:white;
+    width:90%;
+    height:10%;
+    font-weight:bold;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5%;
+    text-align: center;
+}
+
+.text-input {
+    height:90%;
+    width:90%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.entry-text {
+    height:85%;
+    width:100%;
+    border-radius: 15px;;
+    background-color:rgb(231, 229, 229);
+    color:black;
+}
+.dark-mode .entry-text {
+    background-color:rgb(52, 52, 52);
+    color:white;
+}
+
+
+
+.insights-popup {
+    height:80%;
+    width:80%;
+    top:10%;
+    left:10%;
+}
+.insights-title {
+    height:5%;
+    margin-top:30px;
+    font-size: 30px;
+}
+.insights-large-column {
+    height: 90%;
+    width:100%;
+    top:-5%;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.insights-large-row {
+    width:100%;
+}
+
+.insights-button {
+    height: 50px;
+    width: 150px;
+    
+}
+.insights-stats-container {
+    height:80%;
+    width:100%;
+}
+.cloud-container {
+    width:50%;
+    height:100%;
+}
+.graphs-container {
+    width:50%;
+    height:100%;
+}
+.graphs {
+    height: 50%;
+    width:100%;
+}
+.explanations {
+    margin-top: 50px;
+    height:50%;
+    width:100%;
+}
+
+
+.tooltip {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    z-index:8;
+}
+.chart-container {
+    display: flex;
+    position: relative;
+    width:100%;
+    height:100%;
+}
+.chart {
+    margin-right: 20px;
+    text-align: center;
+}
+.chart-title {
+    font-size:20px;
+    width: 30%;
+    height:40px;
+    text-align: center;
+}
+.chart-rows {
+    width:100%;
+    height:100%;
+}
+
+
+
+.cloud-square {
+    width: 100%;
+    height: 90%;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.wordCloudTitle {
+    position:relative;
+    top:+20px;
+    height:23.5px;
+}
+.cloud-container-container {
+    position: relative;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cloud-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cloud-tooltip-box {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    z-index:8;
+
+    
+}
+
+
+/* Initially hide the popup */
+#info-popup1 {
+    display: none;
+    position: absolute;
+    background-color: white;
+    color: black;
+    padding: 10px;
+    border-radius: 15px;
+    width:500px;
+    height: 200px;
+    z-index:9;
+}
+
+#info-popup2 {
+    display: none;
+    position: absolute;
+    background-color: white;
+    color: black;
+    padding: 10px;
+    border-radius: 15px;
+    width:230px;
+    height: 300px;
+    z-index:9;
+}
+
+#info-popup3 {
+    display: none;
+    position: absolute;
+    background-color: white;
+    color: black;
+    padding: 10px;
+    border-radius: 15px;
+    width:230px;
+    height: 200px;
+    z-index:9;
+}
+
+.discuss {
+    height:80%;
+    width:80%;
+    top:10%;
+    left:10%;
+}
+
+.prompt-holder {
+  background-color: rgb(174, 174, 86);
+  border-radius: 30px;
+  height:18%;
+  margin-bottom: 5%;
+  width: 80%;
+  align-items: center;
+  justify-content: center;
+}
+
+.text2 {
+	
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+}
