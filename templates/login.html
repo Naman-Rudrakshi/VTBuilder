@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VTBuilder</title>
+<link rel="icon" href="images/favicon.png" type="image/x-icon">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,700&display=swap">
+
+<link rel="stylesheet" href="common/common.css">
+<link rel="stylesheet" href="login/login.css">
+
+<script src="common/script.js/server_functions.js" defer></script>
+<script src="login/script.js/server_functions.js" defer></script>
+<script src="login/script.js/button_functions.js" defer></script>
+
+<script src="common/script.js/adaptive_elements.js" defer></script>
+
+</head>
+<body>
+
+    <!-- this is where the animation and underlying content stuff would go wheni ts done-->
+
+    <div class="background-container" data-type="mode" >
+        <div class="background-vignette" data-type="mode"></div>
+        <div class="background-grid" data-type="mode"></div>
+    </div>
+    
+
+    <div class ="row-container" id="interactions-container">
+
+        <div class="toggle-container">
+            <label class="toggle-text" for="darkModeToggle">Dark Mode:</label>
+            <div class="toggle-switch" id="darkModeToggle">
+                <div class="toggle-knob"></div>
+            </div>
+        </div>
+
+        <div id="popup" class="popup">
+            <div class="popup-content">
+                <p id="popup-text"></p>
+                <button class="button text" id="okayButton">OKAY</button>
+            </div>
+        </div>
+
+        <div class="space-group" id="end"></div>
+        <div class="login-logo">
+            <img id="logo" src="images/darkgameLogo.png" alt="Logo">
+        </div>
+        <div class="space-group" id="middle"></div>
+
+        <div class ="row-container" id="login-buttons-container">
+
+            <input class="input text" id="nickname" placeholder="Enter Nickname">
+            <div class="space-group" id="nameSpace"></div>
+            <input class="input text" id="lobbyCode" placeholder="Enter Code">
+            <div class="space-group" id="lobbySpace"></div>
+            <button class="button text" id="joinLobbyButton">Join Lobby</button>
+            <div class="space-group" id="textSpace"></div>
+            <div class="space-group" id="textContainer">
+                <div class="space-group text" id="text">OR</div> 
+            </div>
+            <div class="space-group" id="textSpace"></div>
+            <button class="button text" id="createLobbyButton">Create Lobby</button>  
+       
+        </div>
+        <div class="space-group" id="end"></div>
+
+    </div>
+    
+</body>
+</html>

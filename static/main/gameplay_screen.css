@@ -1,0 +1,51 @@
+/*bank for images. bank contains columns, which contain squares, which contain images. does NOT WORK ON MOBILE!!!*/
+.bank {
+  width:100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap:5%;
+  height:20%;
+  background-color: transparent;
+  position: relative;
+   border: 2px solid black;
+  border-radius:50px;
+}
+.dark-mode .bank {
+  border: 2px solid white;
+}
+.bank-column {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80%;
+  width: auto;
+  margin: 5px;
+  border-radius: 10px;
+  border: 3px solid transparent;
+} 
+.image-square {
+  border-radius: 10px;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+.bank-image {
+  width: 100%;
+  height: 100%; 
+}
+
+/*buttons need to be half the width and next to each other*/
+/*close button is to end the game*/
+#startButton, #closeButton {
+  height:100%;
+  width:49%;
+}
+
+
+
+
+
+
+

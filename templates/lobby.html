@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VTBuilder</title>
+<link rel="icon" href="images/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,700&display=swap">
+
+<link rel="stylesheet" href="common/common.css">
+<link rel="stylesheet" href="lobby/lobby.css">
+
+<script src="common/script.js/popups.js" defer></script>
+
+<script src="common/script.js/server_functions.js" defer></script>
+<script src="lobby/script.js/server_functions.js" defer></script>
+
+<script src="common/script.js/adaptive_elements.js" defer></script>
+
+
+<script src="common/script.js/voice.js" defer></script>
+
+</head>
+<body class="page-loaded">
+
+  <!--
+  <div class="logo-container">
+    <img class="foreground-img" id="logo" src="images/gameLogo.png">
+  </div>
+
+  <div class="overlay2"></div>
+
+  <div class="grid-container2" id="gridContainer2"></div>
+  -->
+  
+  <div class="popup-overlay" id="popup-overlay"></div>
+  
+    
+  <div class="square popup" id="popup-1">
+      <div class="popup-content">
+          <div class="popup-title">How To Play</div>
+          <div class="column-container instructions-column">
+            <div class = "row-container instructions-row">
+              <div class="row popup-text">To start, player is assigned a few different tiles that are part of a larger image.</div>
+              <button class="row button popup-button" onclick="showPopup(2,4)">Next</button>
+            </div>
+            <img class = "instructions-image"  src="images/bankImage.png">
+          </div>
+      </div>
+  </div>
+
+  <div class="square popup" id="popup-2">
+    <div class="popup-content">
+        <div class="popup-title">How To Play</div>
+        <div class="column-container instructions-column">
+          <div class = "row-container instructions-row">
+            <div class="row popup-text">Together, everyone’s pieces form a complete image. But, each player can only see their own pieces!</div>
+            <button class="row button popup-button" onclick="showPopup(3,4)">Next</button>
+          </div>
+          <img class = "instructions-image"  src="images/gameGridImage.png">
+        </div>
+    </div>
+</div>
+
+<div class="square popup" id="popup-3">
+  <div class="popup-content">
+      <div class="popup-title">How To Play</div>
+      <div class="column-container instructions-column">
+        <div class = "row-container instructions-row">
+          <div class="row popup-text">Communicate with your team and describe your pieces to try and correctly form the image. Time does not matter, only your accuracy.</div>
+          <button class="row button popup-button" onclick="showPopup(4,4)">Next</button>
+        </div>
+        <img class = "instructions-image"  src="images/commsSS.png">
+      </div>
+  </div>
+</div>
+
+<div class="square popup" id="popup-4">
+  <div class="popup-content">
+      <div class="popup-title">How To Play</div>
+      <div class="column-container instructions-column">
+        <div class = "row-container instructions-row">
+          <div class="row popup-text">Before you start, discuss the strategy prompts on the right side of this page. Good luck!</div>
+          <button class="row button popup-button" onclick="closePopup(4)">Close</button>
+        </div>
+        
+      </div>
+  </div>
+</div>
+
+
+    <div class="background-container" data-type="mode" >
+        <div class="background-vignette" data-type="mode"></div>
+        <div class="background-grid" data-type="mode"></div>
+    </div>
+
+    <div class ="row-container" id="interactions-container">
+      
+      <div class="toggle-container">
+        <label class="toggle-text" for="darkModeToggle">Dark Mode:</label>
+        <div class="toggle-switch" id="darkModeToggle">
+            <div class="toggle-knob"></div>
+        </div>
+      </div>
+
+      <button class = "button" id="leaveButton" onclick=leaveGame() >Leave Lobby</button>
+
+      <div class="space-group" id="end"></div>
+        <div class="logo">
+            <img id="logo" src="images/darkgameLogo.png" alt="Logo">
+        </div>
+      <div class="space-group" id="middle"></div>
+      
+      <div class="column-container" id="largeColumnContainer">
+
+        <div class="column" id="column-one">
+
+          <div class="square" id="left-square">
+            
+            <div class ="column-container" id="voiceAndPlayerContainer">
+
+              <div class="space-group" id="verticalGap"></div>
+
+              <div class="column-container" id="micContainer">
+                <button id="micButton" class="mic-button">
+                  <img src="images/micImage.png" alt="Mic" class="mic-icon" id="micIcon">
+                  <div class="muted-overlay">
+                    <div class="cross-line"></div>
+                  </div>
+                </button>  
+              </div>
+              
+              <div class="space-group" id="verticalGap"></div>
+
+              <div class="row-container" id="player-list-container">
+                <div class="row-container" id="player-list"></div>
+              </div>
+
+              <div class="space-group" id="verticalGap"></div>
+
+            </div>
+
+            <div class="space-group"></div>
+            <div class="column-container" id="textContainer">
+              <div class="space-group text" id="lobbyCode"></div> 
+            </div>
+            <div class="space-group"></div>
+            <div class="column-container" id="buttons-container">
+                <button class = "button text" id="startButton" onclick=sendStartGame() >Start Game</button>
+            </div>
+            
+
+          </div>
+
+        </div>
+  
+        <div class="column" id="column-two">
+          <div class="square" id="gameSquare">
+            <h2 class="text" id="heading">Discussion Prompts</h2>
+            
+            <div class="space-group prompt-holder">
+              <p class="text" id="paragraph">Will there be a designated leader, or will everyone have equal control?</p>
+           
+            </div>
+            <div class="space-group prompt-holder">
+              <p class="text" id="paragraph">How will you describe each of your squares verbally?</p>
+            
+            </div>
+            <div class="space-group prompt-holder">
+              <p class="text" id="paragraph">How do you plan to resolve a disagreement?</p>
+            </div>
+             
+          </div>
+        </div>
+  
+      </div>
+
+      <div class="space-group" id="end"></div>
+
+    </div>
+
+
+  
+</body>
+</html>

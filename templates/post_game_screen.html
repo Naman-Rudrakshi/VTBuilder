@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VTBuilder</title>
+<link rel="icon" href="images/favicon.png" type="image/x-icon">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,700&display=swap">
+
+<link rel="stylesheet" href="common/common.css">
+<link rel="stylesheet" href="post/post_game_screen.css">
+
+<script src="common/script.js/adaptive_elements.js" defer></script>
+<script src="common/script.js/server_functions.js" defer></script>
+<script src="common/script.js/popups.js" defer></script>
+
+<script src="post/script.js/server_functions.js" defer></script>
+<script src="post/script.js/final_grid.js" defer></script>
+<script src="post/script.js/pageFlipper.js" defer></script>
+<script src="post/script.js/surveyData.js" defer></script>
+<script src="post/script.js/extraButtons.js" defer></script>
+<script src="post/script.js/loadingAnimation.js" defer></script>
+
+<script src="common/script.js/voice.js" defer></script>
+<script src="post/script.js/barGraphs.js" defer></script>
+<script src="https://d3js.org/d3.v7.min.js"></script>
+
+</head>
+<body class="page-loaded">
+
+  <!-- This is the animation overlay. Disabled for now cuz i need to tweak it to look good and its not a priority
+  <div class="logo-container">
+    <img class="foreground-img" id="logo" src="images/gameLogo.png">
+  </div>
+
+  <div class="overlay2">
+    
+  </div>
+
+  <div class="grid-container2" id="gridContainer2"></div>
+  -->
+  
+  <div id="info-popup1">
+    <div class="tooltip-line">The word cloud shows the most impactful words used by your team.</div>
+    <div class="tooltip-line">Green words have a positive impact score, which means their use benefitted your team.</div>
+    <div class="tooltip-line">Red words have a negative score, which means they hindered your team.</div>
+    <p>A greater size indicates a greater magnitude of score, which means the word was more impactful. Hover over a word to see its impact score, number of times it was used by your team, and the type of word it is!</p>
+</div>
+
+<div id="info-popup2">
+  <div class="tooltip-line">This graph shows the importance of several categories of words to team performance.</div>
+  
+  <p>The size of the bars represent how strongly correlated the usage of words in a particular category is with team performance. For example, a highly positive value would indicate that high scoring teams tend to use words of that category a lot. Hover over a bar to see the category and its importance.</p>
+</div>
+
+<div id="info-popup3">
+  <div class="tooltip-line">This graph shows how many words of each category your team used.</div>
+  <p>Hover over a bar to see the category it represents, examples of words in that category, and how many words in that category your team used.</p>
+</div>
+  <div class="cloud-tooltip-box" id="cloudTooltipBox" style="display: none;"></div>
+    <div class="popup-overlay" id="popup-overlay"></div>
+      
+    <div class="square popup" id="popup-1">
+      <div class="popup-content">
+          <div class="popup-title popup-text">Post Game Exercise</div>
+          <div class="column-container instructions-column">
+            <div class = "row-container instructions-row">
+              <div class="popup-text popup-add">Before you see your results, please rate your individual and team performance.</div>
+              <button class="button popup-button" onclick="showPopup(2,4)">Next</button>
+            </div>
+            
+          </div>
+      </div>
+  </div>
+
+  <div class="square popup" id="popup-2">
+    <div class="popup-content">
+        <div class="popup-title popup-text">Post Game Exercise</div>
+        <div class="column-container instructions-column">
+         
+          <div class = "row-container instructions-row">
+            <div class="popup-text popup-add">Consider the following when completing the ratings: effective communication, participation, leadership, conflict resolution.</div>
+            <button class="button popup-button" onclick="closePopup(4)">Next</button>
+          </div>
+          
+        </div>
+    </div>
+</div>
+
+<div class="square popup insights-popup" id="popup-3">
+  <div class="popup-content">
+      <div class="popup-text insights-title">Insights</div>
+      
+      <div class="column-container instructions-column insights-large-column">
+        <div class = "row-container instructions-row insights-large-row">
+          <div class = "column-container insights-stats-container">
+            <div class = "column row-container cloud-container-container">
+              <div class="cloud-square">
+                <div class="cloud-container" id="wordCloud"></div>
+              </div>
+              <div class="input chart-title wordCloudTitle" id="cloudTitle">Spoken Words</div>
+            </div>
+            <div class = "column row-container graphs-container">
+                <div class = "row graphs">
+                  <div class="chart-container">
+                    <div class="row-container chart-rows">
+                      <div class="chart" id="chart-container1">
+                        
+                      </div>
+                      <div class="input chart-title" id="weights">Category Weights</div>
+  
+                    </div> 
+                    
+                    
+                   </div>
+                </div>
+                <div class = "row graphs">
+                  <div class="chart-container">
+                    
+                    <div class="row-container chart-rows">
+                      <div class="chart" id="chart-container2">
+                        
+                      </div>
+                      <div class="input chart-title"id="counts">Category Counts</div>
+  
+                    </div> 
+                    
+                  </div>
+                </div>
+            </div>
+          </div>
+          
+          
+          
+          
+          <button class="button insights-button" onclick="showPopup(4,4)">Discussion Prompts</button>
+        </div>
+        
+      </div>
+  </div>
+</div>
+
+<div class="square popup discuss" id="popup-4">
+  <div class="popup-content">
+      <div class="insights-title popup-text">Discussion Prompts</div>
+        <div class="column-container instructions-column insights-large-column">
+         
+          <div class = "row-container instructions-row insights-large-row">
+            <div class="space-group prompt-holder">
+              <p class="text2" id="paragraph">Will there be a designated leader, or will everyone have equal control?</p>
+           
+            </div>
+            <div class="space-group prompt-holder">
+              <p class="text2" id="paragraph">How will you describe each of your squares verbally?</p>
+            
+            </div>
+            <div class="space-group prompt-holder">
+              <p class="text2" id="paragraph">How do you plan to resolve a disagreement?</p>
+            </div>
+            <button class="button insights-button" onclick="closePopup(4)">Next</button>
+          </div>
+          
+        </div>
+  </div>
+</div>
+
+    <div class="background-container" data-type="mode" >
+        <div class="background-vignette" data-type="mode"></div>
+        <div class="background-grid" data-type="mode"></div>
+    </div>
+
+    <div class ="row-container" id="interactions-container">
+      
+      <div class="toggle-container">
+        <label class="toggle-text" for="darkModeToggle">Dark Mode:</label>
+        <div class="toggle-switch" id="darkModeToggle">
+            <div class="toggle-knob"></div>
+        </div>
+      </div>
+
+      
+
+      <div class="space-group" id="end"></div>
+        <div class="logo">
+            <img id="logo" src="images/darkgameLogo.png" alt="Logo">
+        </div>
+      <div class="space-group" id="middle"></div>
+
+
+
+
+      <div class="row-container" id="page-1">
+        <div class="sliderOneContainer row-container">
+          <div class="question slider-text">Rate your own performance from 1-10</div>
+            <div class="slider-container">
+                <input type="range" class="slider" min="1" max="10" id="slider1" value="5">
+            </div>
+        </div>
+        <div class="space-group"></div>
+        <div class="sliderTwoContainer row-container">
+          <div class="question slider-text">Rate your team's overall performance from 1-10</div>
+            
+          <div class="slider-container">
+              <input type="range" class="slider" min="1" max="10" id="slider2" value="5">
+          </div>
+          
+        </div>
+            
+        <div class="space-group"></div>
+        <div class="space-group sendButtonHolder">
+          <button class="button" id="save-button">Send Data</button>
+        </div>
+        
+            
+      </div>
+
+      <div class="row-container" id="page-2">
+        <div class="space-group" id="loadingText">
+          <div class="text" id="loading">Fetching Results.</div>
+        </div>
+        <div class="space-group-superficial"></div>
+      </div>
+
+      <div class="column-container" id="page-3">
+
+        <div class="column row-container" id="column-one">
+          
+          <div class="input label">Original Image</div>
+          <div class="space-group"></div>
+          <div class="square" id="left-square">
+            <img class = "finalImage image">
+          </div>
+          <div class="space-group"></div>
+          <div class="column-container" id="endGameButtons">
+            <button class="button" id="analyticsButton" onclick="showAnalytics()">Analytics</button>
+            <div class="space-group verticalButtonSpace"></div>
+            <button class="button" id="endPostButton" onclick="showPage(4)">Next</button>
+          </div>
+          
+        </div>
+  
+        <div class="column row-container" id="column-two">
+          <div class="input label">Assembled Image</div>
+          <div class="space-group"></div>
+          <div class="square" id="gameSquare"></div>  
+        </div>
+        
+        
+      </div>
+
+      <div class="row-container" id="page-4">
+
+        <div class="reflection-container row-container">
+          <div class="reflection-instructions reflection-text">Write a reflection for yourself. What did you contribute to this team?
+
+          </div>
+          <div class="text-input">
+            <textarea class="entry-text" placeholder="Enter text here"></textarea>
+          </div>
+        </div>
+        
+        <div class="column-container reflectionButtons">
+          
+          <button class="button" id="back" onclick="showPage(3)">Back</button>
+          <div class="space-group verticalButtonSpace"></div>
+          <button class="button" id="toLobby" onclick="returnToLobby()">Leave Game</button>
+          
+        </div>
+        
+      </div>
+
+       <div class="space-group" id="end"></div>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-cloud/1.2.5/d3.layout.cloud.min.js"></script>
+    <script src="post/script.js/cloud.js"></script>    
+</body>
+</html>

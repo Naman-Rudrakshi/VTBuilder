@@ -1,0 +1,66 @@
+/* adjust this somehow. I think its being fixed by text resize function idk*/
+#heading { 
+  margin-top:10%;
+  font-weight: bold;
+  color: white;  
+  text-align: center;
+  height: 10%;
+}
+#paragraph {
+  font-weight:lighter;
+  color: white;
+  margin-left:10%;
+  margin-right:5%;
+  text-align: center;
+  height: 80%;
+  
+}
+
+.prompt-holder {
+  background-color: rgb(174, 174, 86);
+  border-radius: 30px;
+  height:18%;
+  margin-bottom: 5%;
+  width: 80%;
+}
+/*holds lobby code*/
+#textContainer {
+  height:20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  border: 2px solid black;
+  color: black;
+  border-radius:50px;
+  font-size: 100%;
+}
+.dark-mode #textContainer {
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
+}
+
+/*lobby code text*/
+#lobbyCode {
+  position: relative;
+  top:-8%;
+}
+
+/*start button needs to be wiiiiiide*/
+#startButton {
+  height:100%;
+  width:100%;
+}
+
+#gameSquare {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+
+
+

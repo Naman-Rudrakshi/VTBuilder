@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VTBuilder</title>
+<link rel="icon" href="images/favicon.png" type="image/x-icon">
+
+<link rel="stylesheet" href="main/gameplay_screen.css">
+<link rel="stylesheet" href="common/common.css">
+
+<script src="common/script.js/server_functions.js" defer></script>
+<script src="main/script.js/server_functions.js" defer></script>
+
+<script src="common/script.js/adaptive_elements.js" defer></script>
+
+<script src="main/script.js/timer.js" defer></script>
+<script src="main/script.js/game_grid.js" defer></script>
+<script src="main/script.js/image_bank.js" defer></script>
+
+<script src="common/script.js/voice.js" defer></script>
+<script src="common/script.js/transcript.js" defer></script>
+
+</head>
+<body class="page-loaded">
+
+  <!-- This is the animation overlay. Disabled for now cuz i need to tweak it to look good and its not a priority
+  <div class="logo-container">
+    <img class="foreground-img" id="logo" src="images/gameLogo.png">
+  </div>
+
+  <div class="overlay2">
+    
+  </div>
+
+  <div class="grid-container2" id="gridContainer2"></div>
+  -->
+  
+     <div class="background-container" data-type="mode" >
+        <div class="background-vignette" data-type="mode"></div>
+        <div class="background-grid" data-type="mode"></div>
+    </div>
+
+    <div class ="row-container" id="interactions-container">
+      
+      <div class="toggle-container">
+        <label class="toggle-text" for="darkModeToggle">Dark Mode:</label>
+        <div class="toggle-switch" id="darkModeToggle">
+            <div class="toggle-knob"></div>
+        </div>
+      </div>
+
+      <button class = "button" id="leaveButton" onclick=leaveGame() >Leave Lobby</button>
+
+      <div class="timer">
+        <span id="minutes">00</span>:<span id="seconds">00</span>
+      </div>
+
+      <div class="space-group" id="end"></div>
+        <div class="logo">
+            <img id="logo" src="images/darkgameLogo.png" alt="Logo">
+        </div>
+      <div class="space-group" id="middle"></div>
+
+
+       <div class="column-container" id="largeColumnContainer">
+
+        <div class="column" id="column-one">
+
+          <div class="square" id="left-square">
+
+            <div class ="column-container" id="voiceAndPlayerContainer">
+
+              <div class="space-group" id="verticalGap"></div>
+
+              <div class="column-container" id="micContainer">
+                <button id="micButton" class="mic-button">
+                  <img src="images/micImage.png" alt="Mic" class="mic-icon" id="micIcon">
+                  <div class="muted-overlay">
+                    <div class="cross-line"></div>
+                  </div>
+                </button>  
+              </div>
+              
+              <div class="space-group" id="verticalGap"></div>
+
+              <div class="row-container" id="player-list-container">
+                <div class="row-container" id="player-list"></div>
+              </div>
+
+              <div class="space-group" id="verticalGap"></div>
+
+              
+              
+
+            </div>
+
+            <div class="space-group"></div>
+            
+    
+              
+    
+              <div class="bank" id="bank"></div>
+    
+            
+            <div class="space-group"></div>
+            <div class="column-container" id="buttons-container">
+                <button class = "button text" id="startButton" onclick=clearGrid() >Clear Grid</button>
+                <div class="space-group" id="verticalGap"></div>
+                <button class = "button text" id="closeButton" onclick=endGame() >End Game</button>
+            </div>
+          </div>
+
+        </div>
+  
+        <div class="column" id="column-two">
+          <div class="square" id="gameSquare"></div>
+        </div>
+  
+      </div>
+
+    </div>
+
+  
+  
+</body>
+</html>

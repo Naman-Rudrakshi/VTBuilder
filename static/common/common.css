@@ -1,0 +1,598 @@
+/*logo styling. class is the container, id is the image itself*/
+.logo {
+    height:10%;
+}
+#logo {
+    height: 100%;
+    width: auto;
+    max-width: 100%;;
+    display: block;
+    margin: 0 auto; /* Center the image horizontally */
+}
+
+/*body, all*/
+body {
+    width:100vw;
+    height:100vh;
+    font-family: 'Raleway', sans-serif;
+    background-color: black;
+}
+
+/* dark mode toddle, all*/
+.toggle-container {
+    color: white;
+    position: absolute;
+
+    top: 2%;
+    left: 2%;
+
+    display: flex;
+    align-items: center;
+}
+/* non adjusting size, idk why just for fun, since everything else adjusts  */
+.toggle-switch {
+    position: relative;
+    width: 60px;
+    height: 30px;
+    background-color: #ccc;
+    border-radius: 15px;
+    margin-left: 5px;
+}
+/* Styles for the toggle knob */
+.toggle-knob {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: #fff;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+.toggle-text {
+    color: black;
+}
+/* Styles for the dark mode */
+.dark-mode .toggle-switch {
+    background-color: #333;
+}
+.dark-mode .toggle-knob {
+    transform: translateX(30px);
+}
+.dark-mode .toggle-text {
+    color: white;
+}
+
+/* background, all */
+.background-container {
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+.background-grid {
+    position: fixed;
+    display: grid;
+
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    
+    justify-content: center; /* Center the grid horizontally */
+    align-content: center; /* Center the grid vertically */
+    overflow: hidden; /* Prevent overflow of squares */
+    
+    background-color: rgb(236, 236, 236); /* light version */
+    transition: background-color 0.3s ease;
+}
+.dark-mode .background-grid {
+    background-color: rgb(73, 73, 73);
+}
+.background-circle {
+    border-radius: 50%;
+    background-color: rgb(214, 214, 214); /* light version */  
+    transition: background-color 0.3s ease;
+}
+.dark-mode .background-circle {
+    background-color: rgb(26, 26, 26);
+}
+.background-vignette {
+    position: fixed;
+    z-index: 1; 
+
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+}
+.background-vignette::before {
+    content: '';
+    position: absolute;
+    
+    width: 100%;
+    height: 100%;
+    
+    background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0) 0%, rgba(225, 225, 225, .9) 80%);  
+    transition: background-color 0.3s ease;
+}
+.dark-mode .background-vignette::before {
+    background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+}
+
+/* basic containers and buttons, all*/
+.row-container {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.column-container {
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+#interactions-container {
+    position: fixed;
+    z-index: 2;
+
+    top:0;
+    left:0;
+    width:100vw;
+    height:100vh;
+}
+/*dunno where exactly to put this one*/
+#buttons-container {
+  background-color: transparent;
+  height:20%;
+  width:100%;
+}
+
+/*alternate margin method, all*/
+.space-group {
+    height:2%;
+    width:100%;
+    color: black;
+}
+#end {
+    height:10%;
+}
+#middle {
+    height:5%;
+}
+.dark-mode .space-group {
+    color:white;
+}
+
+/* any text, all prob*/
+.text {
+    font-weight: bold;
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+}
+/*player title text*/
+.player-text {
+    font-weight: bold;
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+}
+
+/*buttons, all*/
+.button {
+    background: rgb(67, 67, 67);
+    border: none;
+    cursor: pointer;
+    width:100%;
+    height:20%; 
+    font-family:'Raleway', sans-serif;
+    font-weight:bold;
+    color: white;
+  
+    border-radius: 50px;
+    box-shadow: 0px 8px 0px 0px rgba(0, 0, 0);
+    transition: background-color 0.3s ease, transform 0.3s cubic-bezier(0, 0, 0, 1.2);
+}
+.button:hover {
+    background: white;
+    color: rgb(113, 113, 157);
+}
+.dark-mode .button {
+    background: rgb(255, 255, 255);
+    color: black
+}
+.dark-mode .button:hover {
+    background: rgb(67, 67, 67);
+    color: rgb(113, 113, 157);
+}
+.pressed {
+    transform: translateY(4px); /* Move the button down by 5 pixels */
+    box-shadow: 0px 4px 0px 0px rgba(0, 0, 0);
+}
+#leaveButton {
+  position: absolute;
+  width: 60px;
+  height:30px;
+  top: 2%;
+  right: 2%;
+  box-shadow: 0px 4px 0px 0px rgba(0, 0, 0);
+  font-weight: bold;
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+  font-size: 60%;
+}
+#leaveButton {
+  background-color: red;
+  color: white;
+}
+#leaveButton:hover {
+  background: orange;
+  color: rgb(113, 113, 157);
+}
+
+/*any input field*/
+.input {
+    width: 100%;  
+    height:20%;
+
+    border-radius: 50px;
+
+    border: none;    
+    background-color: rgba(149, 132, 151, 0.739);
+    color:white; 
+}
+.input::placeholder {
+    color:white;
+}
+
+/* contains interactive game elements, all*/
+#largeColumnContainer {
+    width:100%;
+    height:65%;
+    gap:4%;
+  }
+  
+/*style for orientation-changing columns (they become rows on a narrow screen), all*/
+.column {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+  
+/* maybe change variable names, like left square and stuff (too vague) */
+/*left square: has image bank, voice button, player list, leave game*/
+/*game square has the grid of pieces*/
+.square {
+  background-color: rgba(149, 132, 151, 0.739);
+  border-radius: 50px;
+  position: relative;
+}
+#left-square {
+  flex-direction: column;
+  background-color: transparent;
+}
+#gameSquare, #assembled-square {
+  position: relative;
+  display: grid;
+  grid-gap:2px;
+  overflow: hidden;
+}
+
+/* mute unmute and player list*/
+#voiceAndPlayerContainer {
+  background-color: rgba(149, 132, 151, 0.739);
+  border-radius: 50px;
+  width: 100%;
+  height: 56%;
+}
+/*voice button*/
+#micContainer{
+  width:47%;
+  height:100%;
+}
+#player-list-container {
+  width:47%;
+  height:100%;
+  overflow: hidden;
+}
+#verticalGap {
+  width: 2%;
+  height: 100%;
+}
+
+/*probs should understand all this. its all mic stuff*/
+.mic-button {
+  position: relative;
+  background-color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 50%;
+  height: 40%;
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 8px 0px rgba(0, 0, 0, 1);
+  overflow: hidden;
+}
+.mic-button:hover {
+  background: lightgray;
+}
+.pressed {
+  transform: translateY(4px); /* Move the button down by 5 pixels */
+  box-shadow: 0px 4px 0px 0px rgba(0, 0, 0);
+}
+.mic-icon {
+  display: block;
+  width: 50%;
+  height: auto;
+}
+.muted-overlay {
+  position: absolute;
+  top: -20%;
+  left: -20%;
+  width: 200%;
+  height: 200%;
+  background-color: rgba(255, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(45deg);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+.mic-button.muted .muted-overlay {
+  opacity: 1;
+}
+.cross-line {
+  width: 100%;
+  height: 10px;
+  background-color: red;
+}
+
+/*player list*/
+#player-list {
+	justify-content: flex-start;
+	height:90%;
+	width:100%;
+	gap: 2%;	
+}
+.playerRow {
+	width: 70%;
+	height:10%;
+	background-color: lightgrey;
+	border-radius: 10px;
+}
+#player-title {
+	background-color: transparent;
+	font-weight: bold;
+}
+#player {
+	color: black;
+	background-color: transparent;
+	width:100%;
+	height:100%;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	margin-top:-3%;
+    
+}
+.dark-mode #player {
+	color: white;
+}
+#first-player {
+    background-color: green;
+}
+
+/*timer widget, so far only in main game*/
+.timer {
+position: absolute;
+  top: 2%;
+  width: 60px;
+  height: 30px;
+  font-size: 150%;
+  font-weight: bold;
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+  color:black;
+}
+.dark-mode .timer {
+  color:white;
+}
+
+/*for the images in game/assembled grid*/
+.image { /* also styles image in game grid*/
+  width: 100%;
+  height: 100%;
+}     
+.canvas {
+  width:100%;
+  height:100%;
+}
+
+
+/* popups for lobby and survey screens */
+.popup-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+  z-index: 4; /* Place it on top */
+}
+
+/* Add the rest of your CSS styles here */
+
+.popup {
+  position: absolute;
+  width: 30%;
+  height: 30%;
+  top: 35%;
+  left: 35%;
+  background-color: rgb(28, 28, 28);
+  
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-button {
+  height: 20%;
+  width: 50%;
+  margin-top: 10%;
+  
+}
+
+.popup-content {
+  height: 100%;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  justify-content: flex-start;
+  align-items: center;
+  color: white;
+  
+}
+
+.popup-title {
+  margin-top: 5%;
+  height:15%;
+  font-weight: bold;
+}
+.popup-text {
+  
+  width: 100%;
+  text-align: center;
+}
+.popup-add {
+  height: 50%;
+}
+.instructions-column {
+  height:70%;
+  align-items: center;
+  width: 100%;
+
+}
+
+.instructions-row {
+  width: 50%;
+  justify-content: center;
+}
+.instructions-image {
+  width: auto;
+  max-width: 50%;
+  max-height: 90%;
+  height:auto;
+  border-radius: 10px;
+  margin-left: 10px;
+  margin-bottom:10px;
+  margin-right:10px;
+
+}
+
+#final-button {
+  height: 30%;
+}
+
+
+/*animation overlay, dw a bout it*/
+/*
+.underlying-content {
+  display: none;
+}
+.page-loaded .underlying-content {
+  display: block;
+  animation: fadeIn 5s ease-in-out forwards; 
+}
+*/
+
+/* foreground animation, currently doesnt exist cuz it needs to be perfected*/
+/*
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.overlay2 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+     
+  backdrop-filter: blur(50px); 
+  z-index: 6; 
+  animation: fadeOut 4s 5s forwards;
+}
+@keyframes fadeOut {
+  from {
+      opacity: 1;
+  }
+  to {
+      opacity: 0;
+  }
+}
+#gridContainer2 {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+  width: 100vw;
+  height: 100vh; 
+  z-index: 5;
+  position: absolute;
+  top:0;
+  left:0;
+  pointer-events: none;
+}
+.pixel {
+  background-color: white;
+  animation: fadeOut 1s linear forwards;
+  opacity: 1;
+  transform-origin: center center;
+  position: relative;
+}
+@keyframes fadeOut {
+  0% {
+      opacity: 1;
+  }
+  100% {
+      opacity: 0;
+  }
+}
+.logo-container {
+  animation: fadeOut 1s 2s forwards;
+  z-index:7;
+  position: absolute;
+  top:0;
+  left:0;
+  width:100vw;
+  height:100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+}
+@keyframes fadeOut {
+  from {
+      opacity: 1;
+  }
+  to {
+      opacity: 0;
+  }
+}
+#logo {
+  width: 50%;
+  height: auto;
+  opacity: 1; 
+  transition: opacity 1s; 
+}
+*/
