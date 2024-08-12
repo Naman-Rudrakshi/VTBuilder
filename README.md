@@ -1,1 +1,5 @@
 # VTBuilder
+
+VTBuilder is a team-building web game designed by me and a friend for the 2023 Congressional App Challenge. Below is the description we submitted to the competition:
+
+Our submission is called VTBuilder, and is a web based team building app. Our app helps teams recognize and improve their communication skills in a fun and engaging way. In todays world, effective communication and teamwork is becoming increasingly important in online settings as teams transition to a more virtual world, like, for example, companies promoting remote work. We realized that there are very few ways for teams to engage in team building activities online, so we made VTBuilder – a platform that provides teams with a risk-free, simulated environment where a team would have to work together to solve a blind puzzle that encourages the team to communicate using our built-in voice chat. After each trial, the platform uses AI transcription and regression to deliver personalized feedback to each user on how effectively they communicated with their team and how they can improve.
