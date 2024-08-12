@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"path": "../../Web_Dev/LATEST VTBuilder/images"
+		},
+		{
+			"path": "../../Web_Dev/LATEST VTBuilder/markdowns (useless)"
+		},
+		{
+			"path": "../../Web_Dev/LATEST VTBuilder/static"
+		},
+		{
+			"path": "../../Web_Dev/LATEST VTBuilder/templates"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "static"
+	}
+}
